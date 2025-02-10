@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base_2
+  
+namespace: prod
+
+configMapGenerator:
+  - name: nginx-configMap
+    literals:
+      - APP_ENV=prod
+      - LOG_LEVEL=debug
+    
+
+secretGenerator:
+  - name: db-credentials
+    literals:
+      - DB_USER=prod_user
+      - DB_PASSWORD=prod_password
+  

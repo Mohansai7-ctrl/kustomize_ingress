@@ -5,5 +5,6 @@ metadata:
   labels:
     name: nginx
     tier: frontend
+  #namespace: dev
 spec:
   replicas: 2
